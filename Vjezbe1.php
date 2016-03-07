@@ -81,6 +81,14 @@ else
     $naziv = $_POST['naziv'];
     $sluzbeni = $_POST['sluzbeni'];
     $postotak = $_POST['postotak'];
+    	    // provjera popunjenosti obrasca
+    	    // 1. ako nisu popunjena sva polja, javi gresku i vrati se na obrazac
+    	    
+    	    // provjera ispravnosti podataka
+    	    // 1. dohvati sve jezike u toj zemlji
+    	    // 2. prodi kroz sve jezike i provjeri dali postoji barem jedan koji je sluzbeni (T)
+    	    // prodi kroz sve jezike i provjeri sumu svih jezika, odnosno dali ce novi postotak preci preko 100
+    	    
             // PRIPREMI UPIT
             $sql = "INSERT INTO CountryLanguage
                             (CountryCode,Language,IsOfficial,Percentage) 
