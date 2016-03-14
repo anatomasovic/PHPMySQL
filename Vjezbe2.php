@@ -83,3 +83,40 @@ $c->close();
  CountryCode i lid oznacimo i kliknemo na Primary.
  
  #####################################################################################################
+
+ANKETE:
+
+﻿<?php
+
+function Fpregled($path) {
+
+
+    // ČITANJE IZ TXT DATOTEKE
+    $c = new mysql("localhost", "root", "", "dwa2_anatomasovic");
+    $query = "SELECT * FROM ankete ORDER BY unesena DESC";
+    $rAnkete = $c->query($query);
+    echo '<table border="1" cellpadding="4">';
+    while ($row = $r->fetch_assoc()) {
+        echo '<tr>';
+        // ANKETNO PITANJE
+        echo '<td>' . $row['pitanje'] . '</td>';
+        echo '<td>' . $row['objavljena'] . '</td>';
+        echo '<td>' . $row['unesena'] . '</td>';
+        // LINK ZA GLASANJE
+        echo '<td>';
+        echo ' <a href="?a=vote&id=' . $row['id'] . '"> GLASANJE </a><br>';
+        echo '</td>';
+        // LINK ZA IZMJENU
+        echo '<td>';
+        echo ' <a href="?a=editform&id=' . $row['id'] . '"> EDIT </a><br>';
+        echo '</td>';
+        // LINK ZA BRISANJE
+        echo '<td>';
+        echo ' <a href="?a=confirm&id=' . $row['id'] . '"> DELETE </a><br>';
+        echo '</td>';
+        echo '</tr>';
+    }
+    echo '</table>';
+    $c->close();
+}
+?>
