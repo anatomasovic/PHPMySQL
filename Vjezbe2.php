@@ -1,3 +1,6 @@
+// MIJENJAMO SHEMU BAZE TAKO DA UMJESTO DA IMAMO STUPAC LANGUAGE U TABLICI COUNTRY LANGUAGE
+// IMATI CEMO ZASEBNU TABLICU LANGUAGE
+
 <?php
 
 // skripta za prebacivanje iz countrylanguages u languages
